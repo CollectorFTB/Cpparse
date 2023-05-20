@@ -44,10 +44,11 @@ Keyword = Struct(
 TemplatedType = NamedStruct('TemplatedType',
     "name" / NullTerminated(GreedyBytes, term=b'<', include=False),
     "args" / NullTerminated(GreedyBytes, term=b'>', include=False),
+    Optional(Const(b' '))
 )
 
 CppType = Select(
-    TemplatedType,    
+    TemplatedType,
     NullTerminated(GreedyBytes, term=b' ', include=True),
 )
 
