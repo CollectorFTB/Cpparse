@@ -1,5 +1,4 @@
 from construct import Struct, Select, Const, GreedyRange, NullTerminated, GreedyBytes, Computed, LazyBound, Debugger, Optional, GreedyString
-from util import pp
 
 class NamedStruct(Struct):
     def __init__(self, name, *subcons, **subconskw):
